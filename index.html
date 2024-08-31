@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false" onkeydown="return false">
+    <!-- 다운로드 버튼 추가 -->
+    <a id="downloadBtn" href="time-tool-1.0.0-setup.exe" download>Download Installer</a>
+
+    <button id="toggleHeaderBtn">Hide Header</button>
+    <header id="header">
+        <button id="stopwatchBtn">Stopwatch</button>
+        <button id="timerBtn">Timer</button>
+        <button id="clockBtn">Clock</button>
+    </header>
+    <div id="content">
+        <div id="stopwatch" class="tab">
+            <div class="timer">
+                <div id="stopwatchDisplay">00:00:00.00</div>
+                <div class="buttons">
+                    <button id="startPauseStopwatchBtn">Start</button>
+                    <button id="resetStopwatchBtn">Reset</button>
+                </div>
+                <p class="developer-credit">Developed by pixelhize</p>
+            </div>
+        </div>
+        <div id="timer" class="tab">
+            <div class="timer">
+                <div id="timerInputContainer">
+                    <input type="number" id="timerHourInput" placeholder="Hours" min="0">
+                    <input type="number" id="timerMinuteInput" placeholder="Minutes" min="0">
+                    <input type="number" id="timerSecondInput" placeholder="Seconds" min="0">
+                </div>
+                <div id="timerDisplay">00:00:00.00</div>
+                <div class="buttons">
+                    <button id="startPauseTimerBtn">Start</button>
+                    <button id="resetTimerBtn">Reset</button>
+                </div>
+                <p class="developer-credit">Developed by pixelhize</p>
+            </div>
+        </div>
+        <div id="clock" class="tab">
+            <div id="clockDisplay">00:00:00</div>
+            <p class="developer-credit">Developed by pixelhize</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="nodrag.js"></script>
+</body>
+</html>

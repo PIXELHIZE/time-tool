@@ -1,0 +1,49 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "description": "time-tool",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "deploy:win64": "electron-builder --windows --x64",
+    "deploy:win": "yarn deploy:win64"
+  },
+  "author": "PIXELHIZE",
+  "license": "ISC",
+  "devDependencies": {
+    "@electron-forge/cli": "^7.4.0",
+    "electron": "^32.0.1",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "productName": "time-tool",
+    "appId": "com.pixelhize.timetool",
+    "asar": true,
+    "protocols": {
+      "name": "time-tool",
+      "schemes": [
+        "time-tool"
+      ]
+    },
+    "win": {
+      "target": [
+        "zip",
+        "nsis"
+      ],
+      "icon": "./logo_cut.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "shortcutName": "time-tool",
+      "artifactName": "time-tool-${version}-setup.${ext}"
+    },
+    "directories": {
+      "buildResources": "./resources/installer/",
+      "output": "./dist/",
+      "app": "."
+    }
+  }
+}
